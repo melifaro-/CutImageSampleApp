@@ -71,9 +71,8 @@ class DrawingSelectionAreaView: UIView, UIAlertViewDelegate {
         
             callback?(points: points)
 
-        } else {
-            points = [CGPoint]()
         }
+        points = [CGPoint]()
         setNeedsDisplay()
     }
 }

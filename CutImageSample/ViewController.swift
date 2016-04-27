@@ -40,7 +40,14 @@ class ViewController: UIViewController {
             
             UIGraphicsEndImageContext()
             
-            self.imageView.image = image
+            let croppedCGImage =  CGImageCreateWithImageInRect(image.CGImage!, CGPathGetPathBoundingBox(path.CGPath));
+
+            let croppedImage = UIImage(CGImage: croppedCGImage!)
+        
+            self.imageView.image = croppedImage
+            
+            self.imageView.layer.mask = nil
+            
         }
         
     }
